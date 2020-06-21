@@ -1,0 +1,31 @@
+﻿<div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content"  ng-controller="APIController" data-ng-init="getGameDetail()">
+	<form name="updategame"  ng-submit="updateGame()">
+		<!--<input type="text" class="form-control" id="name" ng-model="game.GameId" value="1">-->
+		<div class="form-group">
+			<label>Game Name</label>
+			<input type="text" class="form-control" id="name" ng-model="game.GameName" maxlength="50" required>
+		</div>
+		<div class="form-group">
+			<label>Detail</label>
+			<textarea class="form-control" id="detail" rows="3" ng-model="game.GameDetail" maxlength="200"></textarea>
+		</div>
+		<div class="form-group">
+			<label>Price</label>
+			<input type="number" step="0.01" class="form-control" id="price" ng-model="game.Price" required>
+		</div>
+		<div class="form-group">
+			<label>Author</label>
+			<input type="text" class="form-control" id="author" ng-model="game.AuthorName" maxlength="50">
+		</div>
+		<div class="form-group">
+			<label>Image</label>
+			<input type="file" class="form-control" ng-files="getTheFiles($files)"  accept="image/*">
+			<input type="text" id="gameImage" ng-model="game.GameImage" hidden />
+		</div>
+		<div class="form-group">
+			<button type="button" class="btn btn-info" ng-click="uploadFile()">Upload Image</button>
+		</div>
+		<button type="submit" class="btn btn-success">Submit</button>
+		<a href="/" class="btn btn-danger">Cancel</a>
+	</form>
+</div>

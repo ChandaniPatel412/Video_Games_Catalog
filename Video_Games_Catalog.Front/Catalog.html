@@ -1,0 +1,16 @@
+﻿<div class="container mt-4" ng-controller="APIController" data-ng-init="getAllGames()">
+	<div class="row">
+		<div class="col-auto mb-3" ng-repeat="game in games">
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src="http://localhost:51751/Images/{{game.GameImage}}" alt="Card image cap">
+				<!--<img class="card-img-top" src="Images/1.png" alt="Card image cap"/>-->
+				<div class="card-body">
+					<h5 class="card-title">{{game.GameName}}</h5>
+					<p class="card-text">{{game.GameDetail}}</p>
+					<p class="card-text">${{game.Price}}</p>
+					<a ui-sref="game({id: game.GameId})" class="btn btn-primary" id="edit_{{game.GameId}}">Edit</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
